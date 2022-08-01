@@ -9,7 +9,7 @@ project ("CyanArgParser" VERSION 1.0.0 DESCRIPTION "A simple C++ argument parser
 
 add_library(CyanArgParser STATIC
     src/argParser.cpp
- "Testing/main.cpp")
+)
 
 set_target_properties(
     CyanArgParser PROPERTIES 

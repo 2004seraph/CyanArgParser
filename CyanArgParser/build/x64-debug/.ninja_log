@@ -1,8 +1,0 @@
-# ninja log v5
-3	248	6809833356050552	CMakeFiles/CyanArgParser.dir/src/argParser.cpp.obj	3b8e8ff3b38be66
-0	396	6809833357521566	CMakeFiles/CyanArgParser.dir/testing/main.cpp.obj	7daf85ab3cb4e8db
-1	28	6809833532371404	CyanArgParser.lib	6cfc91cade410a52
-3	502	6809833728815133	testing/CMakeFiles/testApp.dir/main.cpp.obj	fcde4cdbd5725903
-1	503	6809833728815133	CMakeFiles/CyanArgParser.dir/testing/main.cpp.obj	7daf85ab3cb4e8db
-503	533	6809833729127557	CyanArgParser.lib	6cfc91cade410a52
-533	954	6809833730663634	testing/testApp.exe	ab403e6f4a88144b
