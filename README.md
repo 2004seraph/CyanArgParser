@@ -1,7 +1,6 @@
 # CyanArgParser
  
-This is a simple C++17 argument parser made mainly for my own use, hence its design and featureset will probably only appease me. I have however attempted to make the interface as intuitive as possible.
-
+This is a simple C++17 argument parser made mainly for my own use as well as practice, hence its design and featureset will probably only appease me. I have however attempted to make the interface as intuitive as possible.
 
 ## How to use
 
@@ -75,3 +74,7 @@ if (args.at("memoryLimit")->set) {
     std::cout << "Memory: " << val << std::endl;
 }
 ```
+
+## Building
+
+This project uses CMake, you can convert it to a visual studio project to build it using the CMake-gui program, nothing weird should happen, I've tested it.
