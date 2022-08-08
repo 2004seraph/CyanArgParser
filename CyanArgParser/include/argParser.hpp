@@ -2,43 +2,49 @@
 #include <list>
 #include <map>
 #include <any>
+#include <vector>
 
 namespace cyan {
 	namespace argParser {
 		class Parser {
-			template <typename T> class argument {
+			class argument {
 				std::string name;
 				std::list<std::string> commandAliases;
 
-				bool set = false;
+				std::string* defaultValue = nullptr;
 
-				T* data = nullptr;
-				T* defaultValue = nullptr;
-				T* implicitValue = nullptr;
+				std::any value;
 
 			public:
-				argument<T>(std::string namei) {
-					this->name = namei;
-				}
+				bool set = false;
 
-				argument<T>* AddAlias(std::string alias) {
-					std::list<std::string>::iterator it;
-					it = commandAliases.end();
-					commandAliases.insert(it, alias);
+				std::list<std::string> GetAliases();
 
-					return this;
-				}
+				std::string* GetDefaultValue();
+
+				void SetValue(std::string valueIn);
+
+				std::any GetValue();
+
+				argument(const std::string namei);
+
+				argument* AddAlias(const char* alias);
+
+				argument* SetInput(const char* value);
 			};
 
-			std::map<std::string, argument<std::any>*> argumentMap;
+			std::map<std::string, argument*> argumentMap;
+
+			char valueSeparator = '~';
 
 		public:
-			template <typename T> argument<std::any> AddArgument(std::string name) {
-				argument<T>* newArgument = new argument<T>(name);
-				argumentMap.insert({ name, newArgument });
+			Parser();
+			Parser(char parserValueSeparator);
 
-				return newArgument;
-			}
+			argument* AddArgument(std::string name);
+
+			std::map<std::string, argument*> Parse(int argc, char* argv[], std::string& path);
+			std::map<std::string, argument*> Parse(int argc, char* argv[]);
 		};
 	}
 }
