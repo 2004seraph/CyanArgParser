@@ -1,7 +1,6 @@
 #include <string>
 #include <list>
 #include <map>
-#include <any>
 #include <vector>
 
 namespace cyan {
@@ -13,7 +12,7 @@ namespace cyan {
 
 				std::string* defaultValue = nullptr;
 
-				std::any value;
+				std::string value;
 
 			public:
 				bool set = false;
@@ -24,7 +23,7 @@ namespace cyan {
 
 				void SetValue(std::string valueIn);
 
-				std::any GetValue();
+				std::string GetValue();
 
 				argument(const std::string namei);
 

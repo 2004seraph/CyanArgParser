@@ -1,12 +1,29 @@
-SET( APP_EXE testApp )
+SET(
+    APP_EXE testApp
+)
 
-ADD_EXECUTABLE( ${APP_EXE}
-                main.cpp ) 
+include_directories(
+  ${PROJECT_NAME}
+  "../include/"
+)
 
-target_include_directories(${APP_EXE} PRIVATE ${SOURCE_SUBDIR})
+ADD_EXECUTABLE(
+    ${APP_EXE}
+    main.cpp
+)
 
-TARGET_LINK_LIBRARIES( ${APP_EXE}
-                       CyanArgParser )
+target_include_directories(
+    ${APP_EXE} 
+    PRIVATE 
+    ${SOURCE_SUBDIR}
+)
 
-add_test(NAME testApp
-         COMMAND testApp)
+TARGET_LINK_LIBRARIES(
+    ${APP_EXE} 
+    CyanArgParser
+)
+
+add_test(
+    NAME testApp
+    COMMAND testApp
+)

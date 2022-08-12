@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "../include/argParser.hpp"
+#include "argParser.hpp"
 
 namespace cap = cyan::argParser;
 
@@ -20,12 +20,14 @@ int main(int argc, char* argv[]) {
 
 	if (args.at("verboseLogging")->set) {
 		std::cout << "verbose is set" << std::endl;
-		std::string val = std::any_cast<std::string>(args.at("verboseLogging")->GetValue());
+		std::string val = args.at("verboseLogging")->GetValue();
 		std::cout << val << std::endl;
 	}
 	if (args.at("logToFile")->set) {
 		std::cout << "logToFile is set" << std::endl;
 	}
+
+	std::cout << "Complete" << std::endl;
 
 	return 0;
 }

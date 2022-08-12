@@ -1,4 +1,4 @@
-#include "include/argParser.hpp"
+#include "argParser.hpp"
 
 #include <iostream>
 #include <string>
@@ -103,7 +103,7 @@ namespace cyan {
 			value = valueIn;
 		}
 
-		std::any Parser::argument::GetValue() {
+		std::string Parser::argument::GetValue() {
 			return value;
 		}
 
