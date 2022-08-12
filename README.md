@@ -1,4 +1,4 @@
-# CyanArgParser
+# CyanArgParser - My Argument Parser
  
 This is a simple C++17 argument parser made mainly for my own use as well as practice, hence its design and featureset will probably only appease me. I have however attempted to make the interface as intuitive as possible.
 
