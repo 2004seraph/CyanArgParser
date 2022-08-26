@@ -40,4 +40,4 @@ install(
 
 # TESTS
 
-add_subdirectory(testing)
+add_subdirectory(tests)
